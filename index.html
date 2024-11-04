@@ -7,8 +7,102 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <form enctype="multipart/form-data" action="index.html" method="get">
+    <!-- <form enctype="multipart/form-data" action="index.html" method="get"> -->
+    <form action="https://formtester.goodbytes.be/post.php" method="POST" class="form">
         <!-- FORM FIELDS HERE -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{12,}" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" name="dob" id="dob" min="1910-01-01" max="2020-01-01" required>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferences</legend>
+            <div class="form-group">
+                <label for="color">Favorite Color:</label>
+                <input type="color" name="color" id="color">
+            </div>
+            <div class="form-group">
+                <label for="hobby">Hobby</label>
+                <input type="text" list="hobbies">
+                <datalist id="hobbies">
+                    <option value="Drawing"></option>
+                    <option value="Swimming"></option>
+                    <option value="Dancing"></option>
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Experience Level:</label>
+                <input type="range" name="quantity" min="1" max="10" step="1">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contact Preferences</legend>
+            <div class="form-group">
+                <label for="contact_method">Preferred Contact Method:</label>
+                <select name="contact_method" id="contact_method">
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                    <option value="sms">Mail</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="newsletter">Subscribe to Newsletter:</label>
+                <input type="checkbox" name="newsletter" id="newsletter">
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Preferences</legend>
+            <label for="">Gender</label>
+            <div class="form-group">
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="gender">Male</label>
+                <input type="radio" name="gender" value="female" id="female">
+                <label for="gender">Female</label>
+                <input type="radio" name="gender" value="other" id="other">
+                <label for="gender">Other</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>More Information</legend>
+            <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Upload Documents</legend>
+            <div class="form-group">
+                <label for="file">Resume and other certificates:</label>
+                <input type="file" name="file" id="file" accept=".pdf,.doc,.docx,.jpg,.png">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Submission</legend>
+            <div class="form-group">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </fieldset>
     </form>
 </body>
 </html>
